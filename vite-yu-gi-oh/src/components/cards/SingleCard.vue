@@ -15,12 +15,12 @@ export default{
 </script>
 
 <template>
-<div class="col-3">
+<div class="col-3 mb-4">
     <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img :src="propsElement.card_images[0].image_url" class="card-img-top" alt="...">
   <div class="card-body">
-    <h4></h4>
-    <p class="card-text"></p>
+    <h4>{{ propsElement.name }}</h4>
+    <p class="card-text">{{ propsElement.archetype }}</p>
   </div>
 </div>
 </div>

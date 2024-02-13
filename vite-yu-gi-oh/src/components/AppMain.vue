@@ -1,5 +1,6 @@
 <script >
   import CardsList from './cards/CardsList.vue'
+  import { store } from '../store';
 export default{
   components:{
     CardsList
@@ -8,7 +9,7 @@ export default{
   name:"AppMain",
     data (){
        return {
-
+        store
        }
     }
 }
@@ -21,10 +22,10 @@ export default{
           <div class="mb-3">
            <select class="form-select w-25"
             name=""
-             id="">
-            <option value="1">Alen</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+             id=""
+             v-model="store.selectValue">
+            <option :value="element.archetype_name" v-for="(element,index) in store.arrayArchetype"
+            :key="index">{{element.archetype_name}}</option>
           </select>  
           </div>
           <div class="bg-light p-2">

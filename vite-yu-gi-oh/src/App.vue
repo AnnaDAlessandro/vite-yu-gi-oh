@@ -18,6 +18,7 @@ export default{
 },
 mounted(){
         this.getData()
+        this.getArchetype()
 
 },
 methods:{
@@ -26,7 +27,13 @@ methods:{
                 store.arrayCards=res.data.data
 
         })
-   }     
+   },
+   getArchetype(){
+        axios.get(store.ApiUrlArchetype).then((res)=> {
+                store.arrayArchetype=res.data
+
+        })
+   }         
 }
 }
 
