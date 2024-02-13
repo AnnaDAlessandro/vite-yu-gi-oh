@@ -23,7 +23,8 @@ export default{
            <select class="form-select w-25"
             name=""
              id=""
-             v-model="store.selectValue">
+             v-model="store.selectValue"
+             @change="$emit('search')">
             <option :value="element.archetype_name" v-for="(element,index) in store.arrayArchetype"
             :key="index">{{element.archetype_name}}</option>
           </select>  

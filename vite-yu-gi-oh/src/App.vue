@@ -22,7 +22,11 @@ mounted(){
 
 },
 methods:{
+
    getData(){
+        if(store.selectValue){
+                store.ApiUrl += `&archetype=${store.selectValue}`
+        }
         axios.get(store.ApiUrl).then((res)=> {
                 store.arrayCards=res.data.data
 
@@ -41,7 +45,7 @@ methods:{
 
 <template>
  <AppHeader></AppHeader>
- <AppMain></AppMain>
+ <AppMain @search="getData()"></AppMain>
  
 </template>
 
