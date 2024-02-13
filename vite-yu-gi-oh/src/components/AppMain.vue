@@ -1,10 +1,10 @@
 <script >
-import CardsList from './components/CardsList.vue'
+  import CardsList from './cards/CardsList.vue'
 export default{
-  
-    components:{
-          CardsList
+  components:{
+    CardsList
   },
+  
   name:"AppMain",
     data (){
        return {
@@ -28,7 +28,6 @@ export default{
           </select>  
           </div>
           <div class="bg-light p-2">
-
             <CardsList></CardsList>
             
           </div>
