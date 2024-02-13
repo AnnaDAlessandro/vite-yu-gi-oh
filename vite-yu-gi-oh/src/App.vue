@@ -1,7 +1,8 @@
 <script >
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import axios from 'axios'
+import axios from 'axios';
+import {store} from './store';
 
 
 export default{
@@ -11,9 +12,21 @@ export default{
   },
           data (){
        return{
-        ApiUrl:'https://db.ygoprodeck.com/api/v7/cardinfo.php'
+       store
 
        }
+},
+mounted(){
+        this.getData()
+
+},
+methods:{
+   getData(){
+        axios.get(store.ApiUrl).then((res)=> {
+                store.arrayCards=res.data.data
+
+        })
+   }     
 }
 }
 

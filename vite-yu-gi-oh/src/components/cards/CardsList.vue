@@ -1,5 +1,6 @@
 <script >
 import SingleCard from '../../components/cards/SingleCard.vue' 
+import { store } from '../../store';
 export default{
     name:"CardsList",
     components:{
@@ -7,6 +8,7 @@ export default{
     },
     data (){
        return {
+        store
 
        }
     }
@@ -16,7 +18,10 @@ export default{
 
 <template>
 <div class="row">
-    <SingleCard></SingleCard>
+    <SingleCard
+    v-for="(element,index) in store.arrayCards"
+    :key="index"
+    :propsElement ="element" ></SingleCard>
 </div>
 </template>
 
